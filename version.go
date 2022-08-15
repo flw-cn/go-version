@@ -48,7 +48,7 @@ const (
 	ErrorVersion                            // some errors have occurred
 )
 
-// ModVersion represents the information retrieved from debug.Module.Version
+// ModVersion represents the information retrieved from debug.Module.Version.
 type ModVersion struct {
 	Type     VersionType
 	Tag      string
@@ -56,7 +56,7 @@ type ModVersion struct {
 	Time     time.Time
 }
 
-// VcsInfo represents the information retrieved from debug.BuildSetting
+// VcsInfo represents the information retrieved from debug.BuildSetting.
 type VcsInfo struct {
 	VCS        string
 	Revision   string
@@ -64,7 +64,7 @@ type VcsInfo struct {
 	LastCommit time.Time
 }
 
-// Brief provides the field to render a brief version line
+// Brief provides the field to render a brief version line.
 type Brief struct {
 	AppName    string
 	ModulePath string
@@ -72,7 +72,7 @@ type Brief struct {
 	GoVersion  string
 }
 
-// Detail provides the field to render a brief version line
+// Detail provides the field to render a detail version information.
 type Detail struct {
 	Brief
 	ModVersion
@@ -216,7 +216,7 @@ func GetVcsInfo(settings []debug.BuildSetting) *VcsInfo {
 //    VCS information:
 //    VCS:         {{.VCS}}
 //    Module path: {{.ModulePath}}
-//    Commit time: {{.LastCommit}}
+//    Commit time: {{.LastCommit.Local.Format "2006-01-02 15:04:05 MST"}}
 //    Revision id: {{.Revision}}
 //
 //    Please visit {{.ModulePath}} to get updates.
